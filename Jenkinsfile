@@ -31,7 +31,7 @@ pipeline {
     }
     stage('Building Image') {
       steps {
-        sh 'docker build -t jihedmrouki/ski .'
+        sh 'docker build -t aniszaatour/ski .'
       }
     }
     stage('Pushing Image to DockerHub') {
@@ -55,7 +55,7 @@ pipeline {
   post {
         always {
             emailext (
-                to: 'mrouki.jihed@esprit.tn',
+                to: 'anis.zaatour@esprit.tn',
                 subject: "Pipeline ${currentBuild.fullDisplayName} completed",
                 body: "The pipeline ended with result: ${currentBuild.result}",
                 mimeType: 'text/plain'
